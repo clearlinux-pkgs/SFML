@@ -4,7 +4,7 @@
 #
 Name     : SFML
 Version  : 2.5.1.s
-Release  : 2
+Release  : 3
 URL      : https://www.sfml-dev.org/files/SFML-2.5.1-sources.zip
 Source0  : https://www.sfml-dev.org/files/SFML-2.5.1-sources.zip
 Summary  : The Simple and Fast Multimedia Library, window module.
@@ -68,25 +68,30 @@ license components for the SFML package.
 
 %prep
 %setup -q -n SFML-2.5.1
+cd %{_builddir}/SFML-2.5.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1556302382
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1604603384
 mkdir -p clr-build
 pushd clr-build
-export LDFLAGS="${LDFLAGS} -fno-lto"
+export GCC_IGNORE_WERROR=1
+export CFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$FFLAGS -fno-lto "
+export FFLAGS="$FFLAGS -fno-lto "
+export CXXFLAGS="$CXXFLAGS -fno-lto "
 %cmake ..
-make  %{?_smp_mflags} VERBOSE=1
+make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1556302382
+export SOURCE_DATE_EPOCH=1604603384
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/SFML
-cp license.md %{buildroot}/usr/share/package-licenses/SFML/license.md
+cp %{_builddir}/SFML-2.5.1/license.md %{buildroot}/usr/share/package-licenses/SFML/d25b34e8485ae2cf7de4fc5a0c5a9425898bdff9
 pushd clr-build
 %make_install
 popd
@@ -240,4 +245,4 @@ popd
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/SFML/license.md
+/usr/share/package-licenses/SFML/d25b34e8485ae2cf7de4fc5a0c5a9425898bdff9
