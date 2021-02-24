@@ -4,7 +4,7 @@
 #
 Name     : SFML
 Version  : 2.5.1.s
-Release  : 3
+Release  : 4
 URL      : https://www.sfml-dev.org/files/SFML-2.5.1-sources.zip
 Source0  : https://www.sfml-dev.org/files/SFML-2.5.1-sources.zip
 Summary  : The Simple and Fast Multimedia Library, window module.
@@ -19,7 +19,7 @@ BuildRequires : doxygen
 BuildRequires : extra-cmake-modules pkgconfig(egl)
 BuildRequires : flac-dev
 BuildRequires : freetype-dev
-BuildRequires : libX11-dev libICE-dev libSM-dev libXau-dev libXcomposite-dev libXcursor-dev libXdamage-dev libXdmcp-dev libXext-dev libXfixes-dev libXft-dev libXi-dev libXinerama-dev libXi-dev libXmu-dev libXpm-dev libXrandr-dev libXrender-dev libXres-dev libXScrnSaver-dev libXt-dev libXtst-dev libXv-dev libXxf86misc-dev libXxf86vm-dev
+BuildRequires : libX11-dev libICE-dev libSM-dev libXau-dev libXcomposite-dev libXcursor-dev libXdamage-dev libXdmcp-dev libXext-dev libXfixes-dev libXft-dev libXi-dev libXinerama-dev libXi-dev libXmu-dev libXpm-dev libXrandr-dev libXrender-dev libXres-dev libXScrnSaver-dev libXt-dev libXtst-dev libXv-dev libXxf86vm-dev
 BuildRequires : libvorbis-dev
 BuildRequires : mesa-dev
 BuildRequires : openal-soft-dev
