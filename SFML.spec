@@ -4,7 +4,7 @@
 #
 Name     : SFML
 Version  : 2.5.1.s
-Release  : 11
+Release  : 12
 URL      : https://www.sfml-dev.org/files/SFML-2.5.1-sources.zip
 Source0  : https://www.sfml-dev.org/files/SFML-2.5.1-sources.zip
 Summary  : The Simple and Fast Multimedia Library, window module.
